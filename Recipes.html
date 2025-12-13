@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>All Recipes — Ramonelle Cook House</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#f7f6f3;
+      --card:#fff;
+      --accent:#7a3f19;
+      --muted:#6b4a39;
+      --muted-2:#5b453b;
+    }
+    *{box-sizing:border-box}
+    body{font-family:Inter, sans-serif;background:var(--bg);color:#3a2720;margin:0;padding:2rem}
+    header{max-width:1100px;margin:0 auto 1.25rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    h1{font-family:'Playfair Display',serif;color:var(--accent);margin:0}
+    nav a{color:var(--muted);text-decoration:none;margin-left:.75rem}
+    main{max-width:1100px;margin:0 auto}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
+    .card{background:var(--card);border-radius:10px;overflow:hidden;display:block;text-decoration:none;color:inherit;box-shadow:0 6px 18px rgba(0,0,0,.06)}
+    .card img{width:100%;height:160px;object-fit:cover;display:block}
+    .card-content{padding:.85rem}
+    .card-title{font-family:'Playfair Display',serif;margin:0 0 .25rem;font-size:1.05rem;color:var(--accent)}
+    .card-meta{color:var(--muted);font-size:.9rem;margin-bottom:.5rem}
+    details.quick-method{margin-top:.5rem;border-top:1px solid rgba(0,0,0,0.04);padding-top:.5rem}
+    details.quick-method summary{cursor:pointer;font-weight:600;color:var(--muted-2);list-style:none;outline:none}
+    details.quick-method[open] summary{color:var(--accent)}
+    details.quick-method ol{margin:.5rem 0 0 1.1rem;color:#4a372e;padding:0}
+    details.quick-method p.read-full{margin:.5rem 0 0;font-size:.9rem}
+    .section-title{margin:0 0 .5rem;font-family:Inter, sans-serif;color:var(--muted-2)}
+    footer{max-width:1100px;margin:1.5rem auto 0;color:var(--muted);font-size:.9rem}
+    @media(min-width:900px){ header{padding:0 1rem} }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Recipes</h1>
+    <nav>
+      <a href="index.html">← Home</a>
+      <a href="recipes.html">All Recipes</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="breakfast" aria-labelledby="breakfast-title">
+      <h2 id="breakfast-title" class="section-title">🌅 Breakfast</h2>
+      <div class="grid">
+        <!-- Fluffy Blueberry Pancakes -->
+        <a class="card" href="recipies/pancake.html">
+          <img src="https://images.unsplash.com/photo-1528207776546-365bb710ee93?w=1200" alt="Blueberry Pancakes">
+          <div class="card-content">
+            <h3 class="card-title">Fluffy Blueberry Pancakes</h3>
+            <div class="card-meta">15 min prep • 15 min cook • Serves 4</div>
+
+            <details class="quick-method">
+              <summary>Quick method</summary>
+              <ol>
+                <li>Whisk 1 1/2 cups flour, 3 1/2 tsp baking powder, 1 tbsp sugar and 1 tsp salt.</li>
+                <li>Whisk 1 1/4 cups milk, 1 egg, 3 tbsp melted butter and 1 tsp vanilla.</li>
+                <li>Combine wet into dry until just mixed; fold in 1 cup blueberries.</li>
+                <li>Cook 1/4 cup batter per pancake on a greased skillet until bubbles form (2–3 min); flip and cook 1–2 min more.</li>
+              </ol>
+              <p class="read-full"><a href="recipies/pancake.html">Read full recipe →</a></p>
+            </details>
+          </div>
+        </a>
+
+        <!-- Chicken Avocado Wrap -->
+        <a class="card" href="recipies/wrap.html">
+          <img src="https://images.unsplash.com/photo-1626707595320-19e921fc4c27?w=1200" alt="Chicken Wrap">
+          <div class="card-content">
+            <h3 class="card-title">Chicken Avocado Wrap</h3>
+            <div class="card-meta">10 min • Serves 2</div>
+
+            <details class="quick-method">
+              <summary>Quick method</summary>
+              <ol>
+                <li>Warm 2 tortillas briefly to make them pliable.</li>
+                <li>Mash 1 avocado with 1 tsp lemon juice, salt & pepper.</li>
+                <li>Spread 1 tbsp mayo or yogurt on each tortilla; layer avocado, ~200 g shredded chicken, salad greens and halved cherry tomatoes.</li>
+                <li>Fold sides in and roll tightly. Slice and serve.</li>
+              </ol>
+              <p class="read-full"><a href="recipies/wrap.html">Read full recipe →</a></p>
+            </details>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section id="lunch" aria-labelledby="lunch-title" style="margin-top:1.25rem">
+      <h2 id="lunch-title" class="section-title">🌞 Lunch</h2>
+      <div class="grid">
+        <!-- (Optionally other lunch cards can go here) -->
+      </div>
+    </section>
+
+    <section id="dinner" aria-labelledby="dinner-title" style="margin-top:1.25rem">
+      <h2 id="dinner-title" class="section-title">🌙 Dinner</h2>
+      <div class="grid">
+        <!-- Creamy Mushroom Risotto -->
+        <a class="card" href="recipies/risotto.html">
+          <img src="https://images.unsplash.com/photo-1476124369491-e7addf5db371?w=1200" alt="Risotto">
+          <div class="card-content">
+            <h3 class="card-title">Creamy Mushroom Risotto</h3>
+            <div class="card-meta">10 min prep • 35 min cook • Serves 4</div>
+
+            <details class="quick-method">
+              <summary>Quick method</summary>
+              <ol>
+                <li>Keep 6 cups stock simmering. Sauté 200 g mushrooms in 1 tbsp oil, set aside.</li>
+                <li>Softly cook 1 chopped onion in remaining oil; add 2 minced garlic cloves briefly.</li>
+                <li>Stir in 300 g Arborio rice, toast 1–2 min; add 1/2 cup wine (optional) until absorbed.</li>
+                <li>Add warm stock ladle by ladle, stirring often, for ~18–22 min until creamy & al dente. Stir mushrooms back in near the end, finish with butter & Parmesan.</li>
+              </ol>
+              <p class="read-full"><a href="recipies/risotto.html">Read full recipe →</a></p>
+            </details>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section id="desserts" aria-labelledby="desserts-title" style="margin-top:1.25rem">
+      <h2 id="desserts-title" class="section-title">🍰 Desserts</h2>
+      <div class="grid">
+        <!-- Chocolate Lava Cake -->
+        <a class="card" href="recipies/lavacake.html">
+          <img src="https://images.unsplash.com/photo-1608571423902-eed4a3cbbb49?w=1200" alt="Chocolate Lava Cake">
+          <div class="card-content">
+            <h3 class="card-title">Chocolate Lava Cake</h3>
+            <div class="card-meta">15 min prep • 12 min cook • Serves 4</div>
+
+            <details class="quick-method">
+              <summary>Quick method</summary>
+              <ol>
+                <li>Preheat oven to 425°F (220°C). Butter and dust four ramekins.</li>
+                <li>Melt 115 g dark chocolate with 115 g butter; cool slightly.</li>
+                <li>Whisk 2 eggs + 2 yolks with 1/2 cup sugar; fold in chocolate and 2 tbsp flour.</li>
+                <li>Divide batter into ramekins; bake 10–13 min until edges set and centers jiggle. Invert and serve immediately.</li>
+              </ol>
+              <p class="read-full"><a href="recipies/lavacake.html">Read full recipe →</a></p>
+            </details>
+          </div>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Tip: these cards link to files in the "recipies/" folder. If you rename that folder to "recipes/", update the hrefs accordingly.
+  </footer>
+</body>
+</html>
