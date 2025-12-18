@@ -1,155 +1,239 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>All Recipes — Ramonelle Cook House</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg:#f7f6f3;
-      --card:#fff;
-      --accent:#7a3f19;
-      --muted:#6b4a39;
-      --muted-2:#5b453b;
-    }
-    *{box-sizing:border-box}
-    body{font-family:Inter, sans-serif;background:var(--bg);color:#3a2720;margin:0;padding:2rem}
-    header{max-width:1100px;margin:0 auto 1.25rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
-    h1{font-family:'Playfair Display',serif;color:var(--accent);margin:0}
-    nav a{color:var(--muted);text-decoration:none;margin-left:.75rem}
-    main{max-width:1100px;margin:0 auto}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
-    .card{background:var(--card);border-radius:10px;overflow:hidden;display:block;text-decoration:none;color:inherit;box-shadow:0 6px 18px rgba(0,0,0,.06)}
-    .card img{width:100%;height:160px;object-fit:cover;display:block}
-    .card-content{padding:.85rem}
-    .card-title{font-family:'Playfair Display',serif;margin:0 0 .25rem;font-size:1.05rem;color:var(--accent)}
-    .card-meta{color:var(--muted);font-size:.9rem;margin-bottom:.5rem}
-    details.quick-method{margin-top:.5rem;border-top:1px solid rgba(0,0,0,0.04);padding-top:.5rem}
-    details.quick-method summary{cursor:pointer;font-weight:600;color:var(--muted-2);list-style:none;outline:none}
-    details.quick-method[open] summary{color:var(--accent)}
-    details.quick-method ol{margin:.5rem 0 0 1.1rem;color:#4a372e;padding:0}
-    details.quick-method p.read-full{margin:.5rem 0 0;font-size:.9rem}
-    .section-title{margin:0 0 .5rem;font-family:Inter, sans-serif;color:var(--muted-2)}
-    footer{max-width:1100px;margin:1.5rem auto 0;color:var(--muted);font-size:.9rem}
-    @media(min-width:900px){ header{padding:0 1rem} }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes - Friendly Web</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        /* Navigation Styling */
+        nav {
+            background-color: #333;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        nav li {
+            margin: 0 1.5rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: color 0.3s ease, border-bottom 0.3s ease;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid transparent;
+        }
+
+        nav a:hover {
+            color: #4CAF50;
+            border-bottom: 2px solid #4CAF50;
+        }
+
+        nav a.active {
+            color: #4CAF50;
+            border-bottom: 2px solid #4CAF50;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 1.5rem;
+            padding-top: 2rem;
+            padding-left: 2rem;
+            font-size: 2.5rem;
+        }
+
+        .recipe-section {
+            padding: 2rem;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .recipe-section:last-child {
+            border-bottom: none;
+        }
+
+        h2 {
+            color: #4CAF50;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        h3 {
+            color: #555;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        ul, ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Recipes</h1>
+    <!-- Navigation -->
     <nav>
-      <a href="index.html">← Home</a>
-      <a href="recipes.html">All Recipes</a>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="Recipes.html" class="active">Recipes</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
     </nav>
-  </header>
 
-  <main>
-    <section id="breakfast" aria-labelledby="breakfast-title">
-      <h2 id="breakfast-title" class="section-title">🌅 Breakfast</h2>
-      <div class="grid">
-        <!-- Fluffy Blueberry Pancakes -->
-        <a class="card" href="recipies/pancake.html">
-          <img src="https://images.unsplash.com/photo-1528207776546-365bb710ee93?w=1200" alt="Blueberry Pancakes">
-          <div class="card-content">
-            <h3 class="card-title">Fluffy Blueberry Pancakes</h3>
-            <div class="card-meta">15 min prep • 15 min cook • Serves 4</div>
+    <!-- Main Content -->
+    <div class="container">
+        <h1>Delicious Recipes</h1>
 
-            <details class="quick-method">
-              <summary>Quick method</summary>
-              <ol>
-                <li>Whisk 1 1/2 cups flour, 3 1/2 tsp baking powder, 1 tbsp sugar and 1 tsp salt.</li>
-                <li>Whisk 1 1/4 cups milk, 1 egg, 3 tbsp melted butter and 1 tsp vanilla.</li>
-                <li>Combine wet into dry until just mixed; fold in 1 cup blueberries.</li>
-                <li>Cook 1/4 cup batter per pancake on a greased skillet until bubbles form (2–3 min); flip and cook 1–2 min more.</li>
-              </ol>
-              <p class="read-full"><a href="recipies/pancake.html">Read full recipe →</a></p>
-            </details>
-          </div>
-        </a>
+        <div class="recipe-section">
+            <h2>Classic Spaghetti Carbonara</h2>
+            <p>A traditional Italian pasta dish that's simple yet elegant.</p>
 
-        <!-- Chicken Avocado Wrap -->
-        <a class="card" href="recipies/wrap.html">
-          <img src="https://images.unsplash.com/photo-1626707595320-19e921fc4c27?w=1200" alt="Chicken Wrap">
-          <div class="card-content">
-            <h3 class="card-title">Chicken Avocado Wrap</h3>
-            <div class="card-meta">10 min • Serves 2</div>
+            <h3>Ingredients:</h3>
+            <ul>
+                <li>400g spaghetti</li>
+                <li>200g pancetta or guanciale, diced</li>
+                <li>4 large eggs</li>
+                <li>100g Pecorino Romano cheese, grated</li>
+                <li>Black pepper to taste</li>
+                <li>Salt for pasta water</li>
+            </ul>
 
-            <details class="quick-method">
-              <summary>Quick method</summary>
-              <ol>
-                <li>Warm 2 tortillas briefly to make them pliable.</li>
-                <li>Mash 1 avocado with 1 tsp lemon juice, salt & pepper.</li>
-                <li>Spread 1 tbsp mayo or yogurt on each tortilla; layer avocado, ~200 g shredded chicken, salad greens and halved cherry tomatoes.</li>
-                <li>Fold sides in and roll tightly. Slice and serve.</li>
-              </ol>
-              <p class="read-full"><a href="recipies/wrap.html">Read full recipe →</a></p>
-            </details>
-          </div>
-        </a>
-      </div>
-    </section>
+            <h3>Instructions:</h3>
+            <ol>
+                <li>Bring a large pot of salted water to boil and cook spaghetti until al dente</li>
+                <li>While pasta cooks, fry pancetta until crispy in a large pan</li>
+                <li>Beat eggs with grated cheese and black pepper in a bowl</li>
+                <li>Drain pasta, reserving 1 cup of pasta water</li>
+                <li>Add hot pasta to pancetta pan, remove from heat</li>
+                <li>Pour egg mixture over pasta, tossing quickly while adding pasta water to create creamy sauce</li>
+                <li>Serve immediately with extra cheese and black pepper</li>
+            </ol>
+        </div>
 
-    <section id="lunch" aria-labelledby="lunch-title" style="margin-top:1.25rem">
-      <h2 id="lunch-title" class="section-title">🌞 Lunch</h2>
-      <div class="grid">
-        <!-- (Optionally other lunch cards can go here) -->
-      </div>
-    </section>
+        <div class="recipe-section">
+            <h2>Chocolate Chip Cookies</h2>
+            <p>Soft, chewy cookies loaded with chocolate chips - a timeless favorite.</p>
 
-    <section id="dinner" aria-labelledby="dinner-title" style="margin-top:1.25rem">
-      <h2 id="dinner-title" class="section-title">🌙 Dinner</h2>
-      <div class="grid">
-        <!-- Creamy Mushroom Risotto -->
-        <a class="card" href="recipies/risotto.html">
-          <img src="https://images.unsplash.com/photo-1476124369491-e7addf5db371?w=1200" alt="Risotto">
-          <div class="card-content">
-            <h3 class="card-title">Creamy Mushroom Risotto</h3>
-            <div class="card-meta">10 min prep • 35 min cook • Serves 4</div>
+            <h3>Ingredients:</h3>
+            <ul>
+                <li>225g butter, softened</li>
+                <li>200g brown sugar</li>
+                <li>100g granulated sugar</li>
+                <li>2 large eggs</li>
+                <li>2 tsp vanilla extract</li>
+                <li>280g all-purpose flour</li>
+                <li>1 tsp baking soda</li>
+                <li>1 tsp salt</li>
+                <li>340g chocolate chips</li>
+            </ul>
 
-            <details class="quick-method">
-              <summary>Quick method</summary>
-              <ol>
-                <li>Keep 6 cups stock simmering. Sauté 200 g mushrooms in 1 tbsp oil, set aside.</li>
-                <li>Softly cook 1 chopped onion in remaining oil; add 2 minced garlic cloves briefly.</li>
-                <li>Stir in 300 g Arborio rice, toast 1–2 min; add 1/2 cup wine (optional) until absorbed.</li>
-                <li>Add warm stock ladle by ladle, stirring often, for ~18–22 min until creamy & al dente. Stir mushrooms back in near the end, finish with butter & Parmesan.</li>
-              </ol>
-              <p class="read-full"><a href="recipies/risotto.html">Read full recipe →</a></p>
-            </details>
-          </div>
-        </a>
-      </div>
-    </section>
+            <h3>Instructions:</h3>
+            <ol>
+                <li>Preheat oven to 375°F (190°C)</li>
+                <li>Cream butter and both sugars until fluffy</li>
+                <li>Beat in eggs and vanilla extract</li>
+                <li>Mix flour, baking soda, and salt in separate bowl</li>
+                <li>Combine wet and dry ingredients</li>
+                <li>Fold in chocolate chips</li>
+                <li>Drop spoonfuls onto baking sheet</li>
+                <li>Bake for 9-11 minutes until golden</li>
+                <li>Cool on baking sheet for 2 minutes, then transfer to wire rack</li>
+            </ol>
+        </div>
 
-    <section id="desserts" aria-labelledby="desserts-title" style="margin-top:1.25rem">
-      <h2 id="desserts-title" class="section-title">🍰 Desserts</h2>
-      <div class="grid">
-        <!-- Chocolate Lava Cake -->
-        <a class="card" href="recipies/lavacake.html">
-          <img src="https://images.unsplash.com/photo-1608571423902-eed4a3cbbb49?w=1200" alt="Chocolate Lava Cake">
-          <div class="card-content">
-            <h3 class="card-title">Chocolate Lava Cake</h3>
-            <div class="card-meta">15 min prep • 12 min cook • Serves 4</div>
+        <div class="recipe-section">
+            <h2>Vegetable Stir Fry</h2>
+            <p>Quick, healthy, and bursting with fresh flavors and colorful vegetables.</p>
 
-            <details class="quick-method">
-              <summary>Quick method</summary>
-              <ol>
-                <li>Preheat oven to 425°F (220°C). Butter and dust four ramekins.</li>
-                <li>Melt 115 g dark chocolate with 115 g butter; cool slightly.</li>
-                <li>Whisk 2 eggs + 2 yolks with 1/2 cup sugar; fold in chocolate and 2 tbsp flour.</li>
-                <li>Divide batter into ramekins; bake 10–13 min until edges set and centers jiggle. Invert and serve immediately.</li>
-              </ol>
-              <p class="read-full"><a href="recipies/lavacake.html">Read full recipe →</a></p>
-            </details>
-          </div>
-        </a>
-      </div>
-    </section>
-  </main>
+            <h3>Ingredients:</h3>
+            <ul>
+                <li>2 tbsp vegetable oil</li>
+                <li>3 cloves garlic, minced</li>
+                <li>1 tbsp ginger, grated</li>
+                <li>2 cups broccoli florets</li>
+                <li>1 red bell pepper, sliced</li>
+                <li>1 cup snap peas</li>
+                <li>2 carrots, julienned</li>
+                <li>3 tbsp soy sauce</li>
+                <li>1 tbsp sesame oil</li>
+                <li>1 tsp cornstarch</li>
+            </ul>
 
-  <footer>
-    Tip: these cards link to files in the "recipies/" folder. If you rename that folder to "recipes/", update the hrefs accordingly.
-  </footer>
+            <h3>Instructions:</h3>
+            <ol>
+                <li>Heat vegetable oil in a large wok or skillet over high heat</li>
+                <li>Add garlic and ginger, stir fry for 30 seconds</li>
+                <li>Add harder vegetables first (broccoli, carrots), stir fry for 3-4 minutes</li>
+                <li>Add bell pepper and snap peas, continue stir frying for 2 minutes</li>
+                <li>Mix soy sauce, sesame oil, and cornstarch in a small bowl</li>
+                <li>Pour sauce over vegetables and toss until coated</li>
+                <li>Serve hot over rice or noodles</li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Friendly Web. All rights reserved.</p>
+    </footer>
 </body>
 </html>
