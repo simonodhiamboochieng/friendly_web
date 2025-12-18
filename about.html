@@ -3,46 +3,236 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Ramonel Cookhouse</title>
-    <!-- Add your site's CSS link here if you have one: <link rel="stylesheet" href="style.css"> -->
+    <title>About Us - Friendly Web</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease, border-bottom 0.3s ease;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid transparent;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #ffd700;
+            border-bottom: 2px solid #ffd700;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        main {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            color: #667eea;
+            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            color: #764ba2;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            text-align: justify;
+            color: #555;
+        }
+
+        .mission-box {
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            padding: 1.5rem;
+            border-left: 4px solid #667eea;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .value-card {
+            background: #f9f9f9;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-top: 3px solid #667eea;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .value-card h3 {
+            color: #764ba2;
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            color: white;
+            text-align: center;
+            margin: 0.5rem 0;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h2 {
+                font-size: 1.4rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            main {
+                padding: 1.5rem;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <nav style="background: linear-gradient(90deg, #ff6b6b, #feca57); padding: 15px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-    <a href="index.html" style="margin: 0 20px; text-decoration: none; color: white; font-weight: bold; font-size: 18px; padding: 10px 15px; border-radius: 25px; background: rgba(255,255,255,0.2); transition: all 0.3s;">Home</a>
-    <a href="#recipes" style="margin: 0 20px; text-decoration: none; color: white; font-weight: bold; font-size: 18px; padding: 10px 15px; border-radius: 25px; background: rgba(255,255,255,0.2); transition: all 0.3s;">Recipes</a>
-    <a href="about.html" style="margin: 0 20px; text-decoration: none; color: white; font-weight: bold; font-size: 18px; padding: 10px 15px; border-radius: 25px; background: rgba(255,255,255,0.2); transition: all 0.3s;">About</a>
-    <a href="#contact" style="margin: 0 20px; text-decoration: none; color: white; font-weight: bold; font-size: 18px; padding: 10px 15px; border-radius: 25px; background: rgba(255,255,255,0.2); transition: all 0.3s;">Contact</a>
-    </nav><!-- Navigation: Copy from your index.html -->
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="#recipes">Recipes</a> <!-- Adjust as needed -->
-        <a href="about.html">About</a>
-        <a href="#contact">Contact</a>
-    </nav>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Friendly Web</a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About Us</a></li>
+                <li><a href="Recipes.html">Recipes</a></li>
+                <li><a href="contact_us.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <section id="about">
-        <h1>About Ramonel Cookhouse</h1>
-        <p>Ramonel Cookhouse is a vibrant food recipe website founded by three close friends—two passionate girls and one dedicated guy—who share a love for delicious, easy-to-make meals. Launched to bring friends and families together around the table, the site features mouthwatering recipes that blend everyday ingredients with creative twists. Their mission is simple: make cooking fun, accessible, and inspiring for everyone, no matter your skill level.</p>
+    <div class="container">
+        <main>
+            <h1>About Us</h1>
 
-        <h2>Our Story</h2>
-        <p>Started by three friends bonded over late-night kitchen experiments, Ramonel Cookhouse began as a passion project. What grew from shared recipes and home-cooked feasts now offers a collection of tested dishes, from quick weeknight dinners to festive bakes. The trio's diverse tastes ensure variety, covering comfort food classics and global flavors with step-by-step guides.</p>
+            <section>
+                <p>Welcome to Friendly Web, your trusted destination for culinary inspiration and delicious recipes from around the world. We believe that cooking should be enjoyable, accessible, and bring people together.</p>
+            </section>
 
-        <h2>What We Offer</h2>
-        <ul>
-            <li>Simple, tested recipes with photos and tips for beginners.</li>
-            <li>Meal ideas for every occasion, including healthy options and desserts.</li>
-            <li>Community-focused content to help you cook with confidenc.</li>
-        </ul>
+            <section class="mission-box">
+                <h2>Our Mission</h2>
+                <p>Our mission is to empower home cooks of all skill levels by providing high-quality recipes, cooking tips, and culinary guidance. We are committed to making delicious food accessible to everyone, regardless of their experience in the kitchen.</p>
+            </section>
 
-        <h2>Meet the Founders</h2>
-        <ul>
-            <li><strong>The Two Girls</strong>: Recipe creators who bring creativity and bold flavors.</li>
-            <li><strong>The One Guy</strong>: The tester and tech whiz ensuring everything works perfectly.</li>
-        </ul>
-    </section>
+            <section>
+                <h2>Our Story</h2>
+                <p>Friendly Web was founded with a passion for food and a desire to create a welcoming community for food enthusiasts. What started as a small blog has grown into a comprehensive resource for recipes and cooking inspiration. We continue to grow our collection of recipes and share our love of cooking with our community.</p>
+            </section>
 
-    <!-- Add your Contact section or footer here if desired -->
+            <section>
+                <h2>Our Values</h2>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <h3>Quality</h3>
+                        <p>We are dedicated to providing tested, reliable recipes that deliver delicious results every time.</p>
+                    </div>
+                    <div class="value-card">
+                        <h3>Accessibility</h3>
+                        <p>We believe great cooking should be accessible to everyone, with clear instructions and readily available ingredients.</p>
+                    </div>
+                    <div class="value-card">
+                        <h3>Community</h3>
+                        <p>We foster a welcoming community where food lovers can share ideas, tips, and their culinary creations.</p>
+                    </div>
+                    <div class="value-card">
+                        <h3>Innovation</h3>
+                        <p>We continuously explore new flavors, techniques, and ingredients to keep our content fresh and exciting.</p>
+                    </div>
+                </div>
+            </section>
 
-    <a href="index.html">Back to Home</a>
+            <section>
+                <h2>Get in Touch</h2>
+                <p>Have questions or suggestions? We'd love to hear from you! Visit our <a href="contact_us.html" style="color: #667eea; text-decoration: none; font-weight: 500;">Contact Us</a> page to get in touch with our team.</p>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Friendly Web. All rights reserved.</p>
+        <p>Making cooking fun and accessible for everyone.</p>
+    </footer>
 </body>
 </html>
